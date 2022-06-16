@@ -1,0 +1,22 @@
+$header1: 4rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2rem;
+$primary: #0152a8;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "global";
+@import "header";
+@import "top";
+@import "apriori";
+@import "why";
+@import "ceo";
+@import "footer";
+@import "media";

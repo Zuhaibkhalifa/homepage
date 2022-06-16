@@ -1,0 +1,111 @@
+header {
+  width: 90%;
+  margin: 2rem auto;
+  height: 10vh;
+}
+nav {
+  @include flex(space-between, center, row);
+  width: 80%;
+  margin: auto;
+  min-height: 10vh;
+  flex-wrap: wrap;
+  .logo {
+    @include flex(flex-start, center, row);
+    flex: 1 1 20rem;
+    img {
+      cursor: pointer;
+    }
+  }
+  ul {
+    @include flex(space-around, center, row);
+    gap: 6rem;
+
+    li button {
+      background-color: white;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+      color: $primary;
+      padding: 1.5rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-size: large;
+    }
+  }
+
+  .burger {
+    display: none;
+    cursor: pointer;
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: $primary;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .burger {
+      display: block;
+    }
+    .burger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .burger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .burger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    ul {
+      position: fixed;
+      left: 100%;
+      top: 100px;
+      gap: 0;
+      flex-direction: column;
+      background-color: $primary;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+    }
+    li {
+      margin: 16px 0;
+    }
+    ul.active {
+      left: 0;
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 250px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    z-index: 1;
+    a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+  }
+
+  .dropdown-content a:hover {
+    background-color: $primary;
+    color: white;
+    border-radius: 4px;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .drop-btn:hover {
+    cursor: pointer;
+  }
+}

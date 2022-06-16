@@ -1,0 +1,50 @@
+.ceo {
+  width: 80%;
+  margin: 8rem auto;
+  flex-wrap: wrap;
+  @include flex(space-between, center, row);
+  .ceo-left {
+    @include flex(space-around, center, column);
+    flex: 1 1 10rem;
+    p {
+      padding: 3rem;
+      font-size: $text;
+      color: $primary;
+      letter-spacing: 2px;
+    }
+  }
+  img {
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .ceo {
+    @include flex(space-between, center, column);
+  }
+}
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 1rem;
+  }
+  .apriori .why .ceo footer {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  * {
+    font-size: 0.5rem;
+  }
+  img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  img {
+    width: 100%;
+  }
+}

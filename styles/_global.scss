@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: rgba(199, 195, 248, 0.116);
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+a,
+li,
+ul,
+label,
+input,
+p {
+  font-size: $text;
+  list-style: none;
+  color: $primary;
+}
+h1 {
+  font-size: $header1;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: $header2;
+  font-weight: bold;
+}
+span {
+  background-color: $primary;
+  color: white;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
